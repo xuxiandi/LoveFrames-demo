@@ -29,8 +29,8 @@ end
 function demo.CreateToolbar()
 
 	local width = love.graphics.getWidth()
-	local version = loveframes.info.version
-	local stage = loveframes.info.stage
+	local version = loveframes.version
+	local stage = loveframes.stage
 	
 	local toolbar = loveframes.Create("panel")
 	toolbar:SetSize(width, 35)
