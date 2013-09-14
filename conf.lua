@@ -5,7 +5,7 @@ function love.conf(t)
 	t.version           = "0.8.0"
 	t.identity          = "loveframes-demo"
 	
-	t.console           = false	 
+	t.console           = true	 
 	t.modules.joystick  = false    
     t.modules.audio     = true      
     t.modules.keyboard  = true   

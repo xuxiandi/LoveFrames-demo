@@ -20,24 +20,39 @@ function example.func()
 	frame:SetName("Text")
 	frame:SetSize(500, 330)
 	frame:CenterWithinArea(unpack(demo.centerarea))
-		
+	
 	local list = loveframes.Create("list", frame)
 	list:SetPos(5, 30)
-	list:SetSize(490, 265)
+	list:SetSize(243, 265)
 	list:SetPadding(5)
 	list:SetSpacing(5)
-		
-	local text = loveframes.Create("text")
-	text:SetText(loremipsum)
-	text:SetShadowColor(200, 200, 200, 255)
-	list:AddItem(text)
-		
+	
+	local text1 = loveframes.Create("text")
+	text1:SetText(loremipsum)
+	text1:SetShadowColor(200, 200, 200, 255)
+	list:AddItem(text1)
+	
+	local colortext = {}
+	for i=1, 150 do
+		local r = math.random(0, 255)
+		local g = math.random(0, 255)
+		local b = math.random(0, 255)
+		table.insert(colortext, {r, g, b, 255})
+		table.insert(colortext, math.random(1, 1000) .. " ")
+	end
+	
+	local text2 = loveframes.Create("text", frame)
+	text2:SetPos(255, 30)
+	text2:SetMaxWidth(243)
+	text2:SetText(colortext)
+	
 	local shadowbutton = loveframes.Create("button", frame)
 	shadowbutton:SetSize(490, 25)
 	shadowbutton:SetPos(5, 300)
 	shadowbutton:SetText("Toggle Text Shadow")
 	shadowbutton.OnClick = function()
-		text:SetShadow(not text:GetShadow())
+		text1:SetShadow(not text1:GetShadow())
+		text2:SetShadow(not text2:GetShadow())
 	end
 	
 end

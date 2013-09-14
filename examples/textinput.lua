@@ -31,6 +31,7 @@ function example.func()
 			textinput:SetMultiline(false)
 			textinput:SetHeight(25)
 			textinput:SetText("")
+			frame:CenterWithinArea(unpack(demo.centerarea))
 		else
 			frame:SetHeight(365)
 			frame:Center()
@@ -38,6 +39,7 @@ function example.func()
 			textinput:SetMultiline(true)
 			textinput:SetHeight(300)
 			textinput:SetText("")
+			frame:CenterWithinArea(unpack(demo.centerarea))
 		end
 	end
 	
